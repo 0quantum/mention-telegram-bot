@@ -69,9 +69,6 @@ async def call(message: types.Message):
         await bot.send_message(message.chat.id, f'дайте ботику адмінку, бо плакати буде', parse_mode="Markdown")
 
 
-
-
-
 @dp.message_handler(content_types=['text'])
 async def chatCheck(message):
     try:
@@ -82,8 +79,6 @@ async def chatCheck(message):
             return
     except:
         addToDb(message.from_user.first_name,message.from_user.id,message.from_user.username,message.chat.id)
-
-
 
 
 if __name__ == "__main__":
